@@ -5,10 +5,10 @@ import json
 # make a GET request to the OneSearch X-Service API
 response = requests.get('http://onesearch.cuny.edu/PrimoWebServices'
                         '/xservice/search/brief?'
-			'&institution=KB'
-			'&query=any,contains,cuny'
-			'&loc=adaptor,primo_central_multiple_fe'
-			'&json=true')
+                        '&institution=KB'
+                        '&query=any,contains,cuny'
+                        '&loc=adaptor,primo_central_multiple_fe'
+                        '&json=true')
 
 # take the data from the response, and ignore any non-unicode characters
 output = response.json()
