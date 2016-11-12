@@ -1,6 +1,5 @@
 # import the libraries that you need
 import requests
-import json
 import csv
 
 # make a GET request to the OneSearch X-Service API
@@ -18,8 +17,10 @@ alldata = response.json()
 # drill down into a smaller subset of the json 
 # and print this smaller bit of json 
 somedata = alldata['SEGMENTS']['JAGROOT']['RESULT']['FACETLIST']['FACET'][7]['FACET_VALUES']
+print(somedata)
 
-# open a file called mydata.txt and write the output to that file
+# open a file called mycsv.csv, then loop through the data 
+# and write to that file
 with open('mycsv.csv', 'wb+') as file:
     writer = csv.writer(file)
     for x in somedata:
