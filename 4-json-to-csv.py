@@ -17,10 +17,11 @@ alldata = response.json()
 
 # drill down into a smaller subset of the json 
 # and print this smaller bit of json 
-someoutput = alldata['SEGMENTS']['JAGROOT']['RESULT']['FACETLIST']['FACET'][7]['FACET_VALUES']
+somedata = alldata['SEGMENTS']['JAGROOT']['RESULT']['FACETLIST']['FACET'][7]['FACET_VALUES']
 
 # open a file called mydata.txt and write the output to that file
-with csv.writer(open('mycsv.csv', 'wb+')) as file:
+with open('mycsv.csv', 'wb+') as file:
+    writer = csv.writer(file)
     for x in somedata:
-        file.writerow([somedata['@KEY'],
-                      [somedata['@VALUE']])
+        writer.writerow([x['@KEY'],
+                         x['@VALUE']])
