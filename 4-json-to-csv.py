@@ -1,6 +1,7 @@
 # import the libraries that you need
 import requests
 import json
+import csv
 
 # make a GET request to the OneSearch X-Service API
 response = requests.get('http://onesearch.cuny.edu/PrimoWebServices'
@@ -16,9 +17,10 @@ alldata = response.json()
 
 # drill down into a smaller subset of the json 
 # and print this smaller bit of json 
-output = alldata['SEGMENTS']['JAGROOT']['RESULT']['FACETLIST']['FACET'][0]['FACET_VALUES']
-print(output)
+someoutput = alldata['SEGMENTS']['JAGROOT']['RESULT']['FACETLIST']['FACET'][7]['FACET_VALUES']
 
 # open a file called mydata.txt and write the output to that file
-with open('mydata.txt', 'w') as file:
-   json.dump(output, file) 
+with csv.writer(open('mycsv.csv', 'wb+')) as file:
+    for x in somedata:
+        file.writerow([somedata['@KEY'],
+                      [somedata['@VALUE']])
