@@ -17,9 +17,9 @@ alldata = response.json()
 # drill down into a smaller subset of the json
 # and print this smaller bit of json
 output = alldata['SEGMENTS']['JAGROOT']['RESULT']['FACETLIST']\
-['FACET'][7]['FACET_VALUES']
+                ['FACET'][7]['FACET_VALUES']
 print(output)
 
 # open a file called mydata.txt and write the output to that file
-with open('mydata.txt', 'w') as file:
-    json.dump(output, file)
+with open('mydata.txt', 'w') as f:
+    json.dump(output, f)

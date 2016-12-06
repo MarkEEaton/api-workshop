@@ -14,5 +14,5 @@ response = requests.get('http://onesearch.cuny.edu/PrimoWebServices'
 output = response.json()
 
 # open a file called myfile.txt and write the output to that file
-with open('myfile.txt', 'w') as file:
-    json.dump(output, file)
+with open('myfile.txt', 'w') as f:
+    json.dump(output, f)
