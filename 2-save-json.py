@@ -7,7 +7,9 @@ response = requests.get('http://onesearch.cuny.edu/PrimoWebServices'
                         '/xservice/search/brief?'
                         '&institution=KB'
                         '&query=any,contains,cuny'
+                        '&query=facet_rtype,exact,books'
                         '&loc=adaptor,primo_central_multiple_fe'
+                        '&loc=local,scope:(KB,AL,CUNY_BEPRESS)'
                         '&json=true')
 
 # take the data from the response, and ignore any non-unicode characters
