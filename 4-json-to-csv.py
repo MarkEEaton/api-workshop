@@ -22,8 +22,7 @@ print(somedata)
 
 # open a file called mycsv.csv, then loop through the data
 # and write to that file
-with open('mycsv.csv', 'w') as f:
+with open('mycsv.csv', 'wb') as f:
     writer = csv.writer(f)
     for x in somedata:
-        writer.writerow([x['@KEY'],
-                         x['@VALUE']])
+        writer.writerow([x['@KEY'], x['@VALUE']])
