@@ -12,7 +12,7 @@ response = requests.get('http://onesearch.cuny.edu/PrimoWebServices'
                         '&loc=local,scope:(KB,AL,CUNY_BEPRESS)'
                         '&json=true')
 
-# take the data from the response, and ignore any non-unicode characters
+# take the json data from the response
 output = response.json()
 
 # open a file called myfile.txt and write the output to that file
